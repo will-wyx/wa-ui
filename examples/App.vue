@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <wa-button>Hello World</wa-button>
+    <wa-button @click="handleBtnClick">{{ msg }}</wa-button>
   </div>
 </template>
 
@@ -8,7 +8,16 @@
 
 export default {
   name: 'App',
-  components: {}
+  data() {
+    return {
+      msg: 'Hello World'
+    }
+  },
+  methods: {
+    handleBtnClick() {
+      console.log(this.msg)
+    }
+  },
 }
 </script>
 

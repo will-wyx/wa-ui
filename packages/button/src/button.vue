@@ -1,12 +1,17 @@
 <template>
-  <button class="wa-button">
+  <button class="wa-button" @click="handleClick">
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-  name: "WaButton"
+  name: "WaButton",
+  methods: {
+    handleClick(event) {
+      this.$emit('click', event);
+    }
+  },
 }
 </script>
 
