@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button class="wa-button">
     <slot></slot>
   </button>
 </template>

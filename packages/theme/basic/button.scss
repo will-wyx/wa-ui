@@ -1,0 +1,23 @@
+@import "common/var";
+
+.wa-button {
+  background-color: white;
+  border: 1px solid $--button-default-border-color;
+  color: $--button-default-font-color;
+  padding: $--button-padding-vertical $--button-padding-horizontal;
+
+  &:hover {
+    color: $--color-primary;
+    border: {
+      color: $--color-primary;
+    };
+    cursor: pointer;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border: {
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    };
+  }
+}

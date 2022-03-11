@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <WAButton>Hello World</WAButton>
+    <wa-button>Hello World</wa-button>
   </div>
 </template>
 
