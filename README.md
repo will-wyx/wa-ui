@@ -20,5 +20,12 @@ npm run build
 npm run lint
 ```
 
+### User
+```
+  "dependencies": {
+    "wa-ui": "git+https://github.com/will-wyx/wa-ui.git"
+  }
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
