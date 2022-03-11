@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import WAUI from './index'
+import WAUI from '@/index'
 
 Vue.config.productionTip = false
 
