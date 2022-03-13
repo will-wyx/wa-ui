@@ -11,6 +11,10 @@ $--color-text-regular: #78909C !default;
 $--button-default-font-color: $--color-text-regular !default;
 $--button-default-border-color: #78909C !default;
 
+$--button-primary-font-color: $--color-primary !default;
+$--button-primary-border-color: $--color-primary !default;
+
+$--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
 
 $--button-padding-vertical: 12px !default;

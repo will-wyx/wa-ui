@@ -4,7 +4,11 @@
 
 .wa-button {
   background-color: white;
-  border: 1px solid $--button-default-border-color;
+  border: {
+    width: 1px;
+    style: solid;
+    color: $--button-default-border-color;
+  };
   color: $--button-default-font-color;
   padding: $--button-padding-vertical $--button-padding-horizontal;
 
@@ -21,5 +25,23 @@
     border: {
       color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
     };
+  }
+
+  &--primary {
+    color: $--button-primary-font-color;
+    border-color: $--button-primary-border-color;
+    &:hover {
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      border: {
+        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      };
+    }
+
+    &:active {
+      color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
+      border: {
+        color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
+      };
+    }
   }
 }

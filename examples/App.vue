@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <wa-button @click="handleBtnClick">{{ msg }}</wa-button>
+    <wa-button type="primary" @click="handleBtnClick">{{ msg }}</wa-button>
   </div>
 </template>
 

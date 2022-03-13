@@ -1,5 +1,9 @@
 <template>
-  <button class="wa-button" @click="handleClick">
+  <button
+      class="wa-button"
+      @click="handleClick"
+      :class="[ `wa-button--${type}` ]"
+  >
     <slot></slot>
   </button>
 </template>
@@ -11,6 +15,12 @@ export default {
     handleClick(event) {
       this.$emit('click', event);
     }
+  },
+  props: {
+    type: {
+      type: String,
+      default: 'default'
+    },
   },
 }
 </script>
