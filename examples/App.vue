@@ -5,7 +5,7 @@
         <input id="loading" type="checkbox" v-model="loading"> loading
       </label>
     </div>
-    <wa-button type="primary" :loading="loading" @click="handleBtnClick">{{ msg }}</wa-button>
+    <wa-button type="danger" :loading="loading" @click="handleBtnClick">{{ msg }}</wa-button>
   </div>
 </template>
 

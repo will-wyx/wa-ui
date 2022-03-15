@@ -2,65 +2,59 @@
 
 @import "common/var";
 
-@mixin default_base {
-  color: $--button-default-font-color;
-  border-color: $--button-default-border-color;
-}
+$--color-modifier: (
+        "default": $--color-info,
+        "info": $--color-info,
+        "primary": $--color-primary,
+        "success": $--color-success,
+        "warning": $--color-warning,
+        "danger": $--color-danger
+);
 
-@mixin default_hover {
-  &:hover {
-    color: $--color-primary;
-    border-color: $--color-primary;
-  }
-}
+$--button-modifier-font-color: (
+        "default": $--button-default-font-color,
+        "info": $--button-info-font-color,
+        "primary": $--button-primary-font-color,
+        "success": $--button-success-font-color,
+        "warning": $--button-warning-font-color,
+        "danger": $--button-danger-font-color
+);
 
-@mixin default_active {
-  &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-  }
-}
+$--button-modifier-border-color: (
+        "default": $--button-default-border-color,
+        "info": $--button-info-border-color,
+        "primary": $--button-primary-border-color,
+        "success": $--button-success-border-color,
+        "warning": $--button-warning-border-color,
+        "danger": $--button-danger-border-color
+);
 
-@mixin default {
-  @include default_base;
-  @include default_hover;
-  @include default_active;
-  &[disabled] {
-    cursor: default;
-    background-color: mix($--color-white, $--color-primary, $--button-disabled-background-percent);
-    &:hover {
-      @include default_base;
-    }
-  }
-}
+@mixin modifier($modifier) {
+  $base-font-color: map-get($--button-modifier-font-color, $modifier);
+  $base-border-color: map-get($--button-modifier-border-color, $modifier);
+  $color: map-get($--color-modifier, $modifier);
+  @at-root {
+    #{& + '--' + $modifier} {
+      color: $base-font-color;
+      border-color: $base-border-color;
 
-@mixin primary_base {
-  color: $--button-primary-font-color;
-  border-color: $--button-primary-border-color;
-}
-
-@mixin primary_hover {
-  &:hover {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-  }
-}
-
-@mixin primary_active {
-  &:active {
-    color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
-  }
-}
-
-@mixin primary {
-  &--primary {
-    @include primary_base;
-    @include primary_hover;
-    @include primary_active;
-    &[disabled] {
       &:hover {
-        @include primary_base;
+        color: mix($--color-black, $color, $--button-active-shade-percent);
+        border-color: mix($--color-black, $color, $--button-active-shade-percent);
+      }
+
+      &:active {
+        color: mix($--color-black, $color, $--button-hover-tint-percent);
+        border-color: mix($--color-black, $color, $--button-hover-tint-percent);
+      }
+
+      &[disabled] {
+        cursor: default;
+        background-color: mix($--color-white, $color, $--button-disabled-background-percent);
+        &:hover {
+          color: map-get($--button-modifier-font-color, $modifier);
+          border-color: map-get($--button-modifier-border-color, $modifier);
+        }
       }
     }
   }
@@ -75,8 +69,12 @@
     style: solid;
   };
 
-  @include default;
-  @include primary;
+  @include modifier(default);
+  @include modifier(info);
+  @include modifier(primary);
+  @include modifier(success);
+  @include modifier(warning);
+  @include modifier(danger);
 
   &__icon + &__content {
     margin-left: .5rem;

@@ -4,15 +4,24 @@
 $--color-black: #000000 !default;
 $--color-white: #FFFFFF !default;
 
+$--color-info: #78909C !default;
 $--color-primary: #64B5F6 !default;
+$--color-success: #81C784 !default;
+$--color-warning: #FFD54F !default;
+$--color-danger: #FF8A65 !default;
 
-$--color-text-regular: #78909C !default;
-
-$--button-default-font-color: $--color-text-regular !default;
-$--button-default-border-color: #78909C !default;
-
+$--button-default-font-color: $--color-info !default;
+$--button-default-border-color: $--color-info !default;
+$--button-info-font-color: $--color-info !default;
+$--button-info-border-color: $--color-info !default;
 $--button-primary-font-color: $--color-primary !default;
 $--button-primary-border-color: $--color-primary !default;
+$--button-success-font-color: $--color-success !default;
+$--button-success-border-color: $--color-success !default;
+$--button-warning-font-color: $--color-warning !default;
+$--button-warning-border-color: $--color-warning !default;
+$--button-danger-font-color: $--color-danger !default;
+$--button-danger-border-color: $--color-danger !default;
 
 $--button-disabled-background-percent: 80% !default;
 $--button-hover-tint-percent: 20% !default;
