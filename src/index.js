@@ -1,4 +1,5 @@
 import Button from '../packages/button'
+import '@icon-park/vue/styles/index.css'
 
 const components = [Button]
 

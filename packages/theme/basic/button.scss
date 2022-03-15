@@ -2,46 +2,83 @@
 
 @import "common/var";
 
+@mixin default_base {
+  color: $--button-default-font-color;
+  border-color: $--button-default-border-color;
+}
+
+@mixin default_hover {
+  &:hover {
+    color: $--color-primary;
+    border-color: $--color-primary;
+  }
+}
+
+@mixin default_active {
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+  }
+}
+
+@mixin default {
+  @include default_base;
+  @include default_hover;
+  @include default_active;
+  &[disabled] {
+    cursor: default;
+    background-color: mix($--color-white, $--color-primary, $--button-disabled-background-percent);
+    &:hover {
+      @include default_base;
+    }
+  }
+}
+
+@mixin primary_base {
+  color: $--button-primary-font-color;
+  border-color: $--button-primary-border-color;
+}
+
+@mixin primary_hover {
+  &:hover {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+  }
+}
+
+@mixin primary_active {
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
+  }
+}
+
+@mixin primary {
+  &--primary {
+    @include primary_base;
+    @include primary_hover;
+    @include primary_active;
+    &[disabled] {
+      &:hover {
+        @include primary_base;
+      }
+    }
+  }
+}
+
 .wa-button {
   background-color: white;
+  padding: $--button-padding-vertical $--button-padding-horizontal;
+  cursor: pointer;
   border: {
     width: 1px;
     style: solid;
-    color: $--button-default-border-color;
   };
-  color: $--button-default-font-color;
-  padding: $--button-padding-vertical $--button-padding-horizontal;
 
-  &:hover {
-    color: $--color-primary;
-    border: {
-      color: $--color-primary;
-    };
-    cursor: pointer;
-  }
+  @include default;
+  @include primary;
 
-  &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border: {
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    };
-  }
-
-  &--primary {
-    color: $--button-primary-font-color;
-    border-color: $--button-primary-border-color;
-    &:hover {
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      border: {
-        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      };
-    }
-
-    &:active {
-      color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
-      border: {
-        color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
-      };
-    }
+  &__icon + &__content {
+    margin-left: .5rem;
   }
 }
