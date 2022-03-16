@@ -4,14 +4,15 @@
 $--color-black: #000000 !default;
 $--color-white: #FFFFFF !default;
 
-$--color-info: #78909C !default;
+$--color-default: #424242 !default;
+$--color-info: #90A4AE !default;
 $--color-primary: #64B5F6 !default;
 $--color-success: #81C784 !default;
 $--color-warning: #FFD54F !default;
 $--color-danger: #FF8A65 !default;
 
-$--button-default-font-color: $--color-info !default;
-$--button-default-border-color: $--color-info !default;
+$--button-default-font-color: $--color-default !default;
+$--button-default-border-color: $--color-default !default;
 $--button-info-font-color: $--color-info !default;
 $--button-info-border-color: $--color-info !default;
 $--button-primary-font-color: $--color-primary !default;
@@ -23,12 +24,15 @@ $--button-warning-border-color: $--color-warning !default;
 $--button-danger-font-color: $--color-danger !default;
 $--button-danger-border-color: $--color-danger !default;
 
+
+$--button-hover-font-percent: 10% !default;
+$--button-hover-border-percent: 10% !default;
+$--button-active-font-percent: 20% !default;
+$--button-active-border-percent: 20% !default;
 $--button-hover-background-percent: 95% !default;
 $--button-active-background-percent: 90% !default;
 
 $--button-disabled-background-percent: 80% !default;
-$--button-hover-tint-percent: 20% !default;
-$--button-active-shade-percent: 10% !default;
 
 $--button-padding-vertical: 12px !default;
 $--button-padding-horizontal: 20px !default;

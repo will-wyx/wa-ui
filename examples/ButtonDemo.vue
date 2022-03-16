@@ -8,6 +8,7 @@
         <option value="success">success</option>
         <option value="warning">warning</option>
         <option value="danger">danger</option>
+        <option value="text">text</option>
       </select>
       <label for="loading">
         <input id="loading" type="checkbox" v-model="loading"> loading

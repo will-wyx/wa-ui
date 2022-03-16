@@ -3,7 +3,7 @@
 @import "common/var";
 
 $--color-modifier: (
-        "default": $--color-info,
+        "default": $--color-default,
         "info": $--color-info,
         "primary": $--color-primary,
         "success": $--color-success,
@@ -29,7 +29,7 @@ $--button-modifier-border-color: (
         "danger": $--button-danger-border-color
 );
 
-@mixin modifier($modifier) {
+@mixin modifier($modifier:'default') {
   $base-font-color: map-get($--button-modifier-font-color, $modifier);
   $base-border-color: map-get($--button-modifier-border-color, $modifier);
   $color: map-get($--color-modifier, $modifier);
@@ -38,21 +38,23 @@ $--button-modifier-border-color: (
       color: $base-font-color;
       border-color: $base-border-color;
 
-      &:hover {
-        color: mix($--color-black, $color, $--button-active-shade-percent);
-        border-color: mix($--color-black, $color, $--button-active-shade-percent);
+      &:hover,
+      &:focus {
+        color: mix($--color-black, $color, $--button-hover-font-percent);
+        border-color: mix($--color-black, $color, $--button-hover-border-percent);
         background-color: mix($--color-white, $color, $--button-hover-background-percent);
       }
 
       &:active {
-        color: mix($--color-black, $color, $--button-hover-tint-percent);
-        border-color: mix($--color-black, $color, $--button-hover-tint-percent);
+        color: mix($--color-black, $color, $--button-active-font-percent);
+        border-color: mix($--color-black, $color, $--button-active-border-percent);
         background-color: mix($--color-white, $color, $--button-active-background-percent);
       }
 
       &[disabled] {
         cursor: default;
         background-color: mix($--color-white, $color, $--button-disabled-background-percent);
+
         &:hover {
           color: map-get($--button-modifier-font-color, $modifier);
           border-color: map-get($--button-modifier-border-color, $modifier);
@@ -71,12 +73,44 @@ $--button-modifier-border-color: (
     style: solid;
   };
 
-  @include modifier(default);
+  &:focus {
+    outline: none;
+  }
+
+  @include modifier;
+  @include modifier('default');
   @include modifier(info);
   @include modifier(primary);
   @include modifier(success);
   @include modifier(warning);
   @include modifier(danger);
+
+  &--text {
+    color: $--color-primary;
+    border: none;
+    padding: {
+      left: 0;
+      right: 0;
+    };
+
+    &:hover,
+    &:focus {
+      color: mix($--color-black, $--color-primary, $--button-hover-font-percent);
+      border-color: mix($--color-black, $--color-primary, $--button-hover-border-percent);
+    }
+
+    &:active {
+      color: mix($--color-black, $--color-primary, $--button-active-font-percent);
+      border-color: mix($--color-black, $--color-primary, $--button-active-border-percent);
+    }
+
+    &[disabled] {
+      cursor: default;
+      &:hover {
+        color: $--color-primary;
+      }
+    }
+  }
 
   &__icon + &__content {
     margin-left: .5rem;
