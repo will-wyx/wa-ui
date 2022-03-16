@@ -1,7 +1,8 @@
 import Button from '../packages/button'
+import Icon from '../packages/icon'
 import '@icon-park/vue/styles/index.css'
 
-const components = [Button]
+const components = [Button, Icon]
 
 const install = function(Vue) {
     components.forEach(component => {
