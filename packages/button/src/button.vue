@@ -3,7 +3,7 @@
       class="wa-button"
       @click="handleClick"
       :class="[ `wa-button--${type}` ]"
-      :disabled="loading"
+      :disabled="loading||disabled"
   >
     <wa-icon class="wa-button__icon" name="loading" v-if="loading"/>
     <span class="wa-button__content"><slot></slot></span>
@@ -27,6 +27,10 @@ export default {
       default: 'default'
     },
     loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }

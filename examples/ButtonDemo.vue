@@ -13,9 +13,12 @@
       <label for="loading">
         <input id="loading" type="checkbox" v-model="loading"> loading
       </label>
+      <label for="disabled">
+        <input id="disabled" type="checkbox" v-model="disabled"> disabled
+      </label>
     </div>
     <div class="button-demo__private">
-      <wa-button :type="type" :loading="loading" @click="handleBtnClick">{{ msg }}</wa-button>
+      <wa-button :type="type" :loading="loading" :disabled="disabled" @click="handleBtnClick">{{ msg }}</wa-button>
     </div>
   </div>
 </template>
@@ -27,6 +30,7 @@ export default {
     return {
       msg: 'Hello World',
       loading: false,
+      disabled: false,
       type: 'default'
     }
   },
