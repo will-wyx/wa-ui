@@ -41,11 +41,13 @@ $--button-modifier-border-color: (
       &:hover {
         color: mix($--color-black, $color, $--button-active-shade-percent);
         border-color: mix($--color-black, $color, $--button-active-shade-percent);
+        background-color: mix($--color-white, $color, $--button-hover-background-percent);
       }
 
       &:active {
         color: mix($--color-black, $color, $--button-hover-tint-percent);
         border-color: mix($--color-black, $color, $--button-hover-tint-percent);
+        background-color: mix($--color-white, $color, $--button-active-background-percent);
       }
 
       &[disabled] {
