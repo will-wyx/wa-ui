@@ -72,6 +72,7 @@ $--button-modifier-border-color: (
     width: 1px;
     style: solid;
   };
+  font-size: $--button-font-size;
 
   &:focus {
     outline: none;

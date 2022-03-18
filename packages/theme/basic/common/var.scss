@@ -11,6 +11,12 @@ $--color-success: #81C784 !default;
 $--color-warning: #FFD54F !default;
 $--color-danger: #FF8A65 !default;
 
+/* Typography */
+$--font-size-base: 14px !default;
+
+/* Button */
+$--button-font-size: $--font-size-base !default;
+
 $--button-default-font-color: $--color-default !default;
 $--button-default-border-color: $--color-default !default;
 $--button-info-font-color: $--color-info !default;
