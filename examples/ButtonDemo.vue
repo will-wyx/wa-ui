@@ -16,9 +16,19 @@
       <label for="disabled">
         <input id="disabled" type="checkbox" v-model="disabled"> disabled
       </label>
+      <select v-model="icon">
+        <option :value="null">无</option>
+        <option v-for="i of icons" :value="i" :key="i">{{ i }}</option>
+      </select>
     </div>
     <div class="button-demo__private">
-      <wa-button :type="type" :loading="loading" :disabled="disabled" @click="handleBtnClick">{{ msg }}</wa-button>
+      <wa-button
+          :type="type"
+          :loading="loading"
+          :icon="icon"
+          :disabled="disabled"
+          @click="handleBtnClick">{{ msg }}
+      </wa-button>
     </div>
   </div>
 </template>
@@ -31,7 +41,13 @@ export default {
       msg: 'Hello World',
       loading: false,
       disabled: false,
-      type: 'default'
+      icon: null,
+      type: 'default',
+      icons: [
+        'aiming',
+        'config',
+        'search'
+      ]
     }
   },
   methods: {

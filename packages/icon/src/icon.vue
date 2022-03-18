@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import { LoadingOne } from '@icon-park/vue'
+import { LoadingOne, Aiming, Config, Search } from '@icon-park/vue'
 
 export default {
   name: 'WaIcon',
-  components: { LoadingOne },
+  components: { LoadingOne, Aiming, Config, Search },
   props: {
     name: {
       type: String,
@@ -28,7 +28,11 @@ export default {
         case 'loading':
           type = 'LoadingOne'
           break;
+        default:
+          type = this.name
+          break;
       }
+      console.log(type)
       return type;
     }
   },

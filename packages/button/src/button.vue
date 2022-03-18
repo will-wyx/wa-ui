@@ -5,7 +5,7 @@
       :class="[ `wa-button--${type}` ]"
       :disabled="loading||disabled"
   >
-    <wa-icon class="wa-button__icon" name="loading" v-if="loading"/>
+    <wa-icon class="wa-button__icon" :name="iconName" v-if="loading || icon"/>
     <span class="wa-button__content"><slot></slot></span>
   </button>
 </template>
@@ -16,6 +16,11 @@ import WaIcon from '../../icon/src/icon'
 export default {
   name: "WaButton",
   components: { WaIcon },
+  computed: {
+    iconName() {
+      return this.loading ? 'loading' : this.icon
+    }
+  },
   methods: {
     handleClick(event) {
       this.$emit('click', event);
@@ -29,6 +34,10 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String,
+      default: null
     },
     disabled: {
       type: Boolean,
