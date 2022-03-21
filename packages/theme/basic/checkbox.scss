@@ -23,6 +23,15 @@
 
     #{$selector + '__icon'} {
       vertical-align: top;
+      display: none;
+    }
+  }
+
+  &.is-checked {
+    #{$selector + '__border'} {
+      #{$selector + '__icon'} {
+        display: block;
+      }
     }
   }
 
