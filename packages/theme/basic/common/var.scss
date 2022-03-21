@@ -3,6 +3,8 @@
 /* Color */
 $--color-black: #000000 !default;
 $--color-white: #FFFFFF !default;
+$--color-300: #E0E0E0 !default;
+$--color-400: #BDBDBD !default;
 
 $--color-default: #424242 !default;
 $--color-info: #90A4AE !default;
@@ -45,3 +47,8 @@ $--button-padding-horizontal: 20px !default;
 
 /* Checkbox */
 $--checkbox-font-size: $--font-size-base !default;
+$--checkbox-font-color: $--color-black !default;
+$--checkbox-border-color: $--color-black !default;
+
+$--checkbox-disabled-font-color: $--color-400 !default;
+$--checkbox-disabled-border-color: $--color-400 !default;

@@ -1,13 +1,16 @@
 <template>
   <label
       class="wa-checkbox"
-      :class="{'is-checked': model}"
+      :class="{
+        'is-checked': model,
+        'is-disabled': disabled
+      }"
   >
     <span class="wa-checkbox__input">
       <span class="wa-checkbox__border">
         <wa-icon name="check-small" class="wa-checkbox__icon"/>
       </span>
-      <input v-model="model" type="checkbox" class="wa-checkbox__original"/>
+      <input v-model="model" type="checkbox" class="wa-checkbox__original" :disabled="disabled"/>
     </span>
     <span class="wa-checkbox__label">Hello World</span>
   </label>
@@ -31,6 +34,10 @@ export default {
       type: Boolean,
       default: false
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
 }
 </script>

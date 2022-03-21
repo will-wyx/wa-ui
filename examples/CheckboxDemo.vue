@@ -1,6 +1,13 @@
 <template>
   <div class="checkbox-demo">
-    <wa-checkbox v-model="checked"/>
+    <div class="checkbox-demo__options">
+      <label for="disabled">
+        <input id="disabled" type="checkbox" v-model="disabled"> disabled
+      </label>
+    </div>
+    <div class="checkbox-demo__private">
+      <wa-checkbox v-model="checked" :disabled="disabled"/>
+    </div>
   </div>
 </template>
 
@@ -9,12 +16,17 @@ export default {
   name: "CheckboxDemo",
   data() {
     return {
-      checked: false
+      checked: false,
+      disabled: false,
     }
   },
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.checkbox-demo {
+  &__options {
+    margin: 1rem 0;
+  }
+}
 </style>
