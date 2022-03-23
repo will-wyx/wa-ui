@@ -1,5 +1,6 @@
 <template>
   <div class="checkbox-demo">
+    <h1>Checkbox</h1>
     <div class="checkbox-demo__options">
       <wa-checkbox v-model="disabled">disabled</wa-checkbox>
     </div>

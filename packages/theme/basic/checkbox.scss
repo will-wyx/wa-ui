@@ -11,6 +11,7 @@
   user-select: none;
   cursor: pointer;
   color: $--checkbox-font-color;
+  margin-right: 1rem;
 
   &__input {
     position: relative;
@@ -45,7 +46,7 @@
   &.is-checked {
     #{$selector + '__border'} {
       #{$selector + '__icon'} {
-        display: block;
+        display: inline-block;
       }
     }
   }

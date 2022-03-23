@@ -1,5 +1,6 @@
 <template>
   <div class="button-demo">
+    <h1>Button</h1>
     <div class="button-demo__options">
       <select v-model="type">
         <option value="default">default</option>
@@ -10,12 +11,8 @@
         <option value="danger">danger</option>
         <option value="text">text</option>
       </select>
-      <label for="loading">
-        <input id="loading" type="checkbox" v-model="loading"> loading
-      </label>
-      <label for="disabled">
-        <input id="disabled" type="checkbox" v-model="disabled"> disabled
-      </label>
+      <wa-checkbox v-model="loading">loading</wa-checkbox>
+      <wa-checkbox v-model="disabled">disabled</wa-checkbox>
       <select v-model="icon">
         <option :value="null">无</option>
         <option v-for="i of icons" :value="i" :key="i">{{ i }}</option>
