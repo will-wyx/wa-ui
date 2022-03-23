@@ -1,12 +1,12 @@
 <template>
   <div class="checkbox-demo">
     <div class="checkbox-demo__options">
-      <label for="disabled">
-        <input id="disabled" type="checkbox" v-model="disabled"> disabled
-      </label>
+      <wa-checkbox v-model="disabled">disabled</wa-checkbox>
     </div>
     <div class="checkbox-demo__private">
-      <wa-checkbox v-model="checked" :disabled="disabled"/>
+      <wa-checkbox v-model="checked" :disabled="disabled">
+        Hello World
+      </wa-checkbox>
     </div>
   </div>
 </template>

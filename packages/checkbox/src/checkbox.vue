@@ -12,7 +12,7 @@
       </span>
       <input v-model="model" type="checkbox" class="wa-checkbox__original" :disabled="disabled"/>
     </span>
-    <span class="wa-checkbox__label">Hello World</span>
+    <span class="wa-checkbox__label"><slot></slot></span>
   </label>
 </template>
 
